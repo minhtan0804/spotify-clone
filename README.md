@@ -1,4 +1,5 @@
-# Project Lyrics
+## Bài tập môn Thực tập cơ sở PTIT
+# Spotisy clone
 
 Develop an elegant React.js Music Application. 
 
