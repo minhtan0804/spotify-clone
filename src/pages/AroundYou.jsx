@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 
 import { useGetSongByCountryQuery } from '../redux/services/shazamCore'
 import { Error, Loader, SongCard } from '../components'
+import configs from '../configs'
 
 const AroundYou = () => {
   const [country, setCountry] = useState('')
@@ -12,9 +13,7 @@ const AroundYou = () => {
 
   useEffect(() => {
     axios
-      .get(
-        'https://geo.ipify.org/api/v2/country?apiKey=at_BcDU6NCIZV8U2BHTivVYr81U1iQua&ipAddress=8.8.8.8'
-      )
+      .get(`https://geo.ipify.org/api/v2/country?apiKey=${configs.GEO_API_KEY}`)
       .then((res) => setCountry(res?.data?.location?.country))
       .catch((error) => console.log(error))
       .finally(() => setLoading(false))
